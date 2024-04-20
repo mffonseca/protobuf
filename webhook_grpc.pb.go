@@ -7,12 +7,11 @@
 package generated
 
 import (
-	"context"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
+	context "context"
+	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 )
-
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -27,7 +26,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type WorkflowServiceClient interface {
-	// Define uma chamada RPC com os parâmetros esperados e a resposta
 	TriggerWorkflow(ctx context.Context, in *WorkflowRequest, opts ...grpc.CallOption) (*WorkflowResponse, error)
 }
 
@@ -52,7 +50,6 @@ func (c *workflowServiceClient) TriggerWorkflow(ctx context.Context, in *Workflo
 // All implementations must embed UnimplementedWorkflowServiceServer
 // for forward compatibility
 type WorkflowServiceServer interface {
-	// Define uma chamada RPC com os parâmetros esperados e a resposta
 	TriggerWorkflow(context.Context, *WorkflowRequest) (*WorkflowResponse, error)
 	mustEmbedUnimplementedWorkflowServiceServer()
 }
